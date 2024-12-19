@@ -26,7 +26,7 @@ It's simple!
 
 * type equivalence: Action and Option<Action> are examples of type equivalence in Rust. Both represent actions a player can take, but Option<Action> is used to store whether the player has taken an action or not (i.e., it’s None when no action is taken and Some(Action) when a player has chosen an action).
 
-## Difficulties and Solutions (What challenges you found and how you overcame them)
+## Difficulties and Solutions (challenges found & how it was overcome)
 * Difficulties: TBA
   
 * Solutions: TBA
