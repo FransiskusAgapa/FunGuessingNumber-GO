@@ -2,7 +2,7 @@
 
 The purpose of this assignment are:
 1. Learn yet another programming language
-2. Practice your creativity
+2. Practice creativity
 3. Apply the concepts of  Data Types
 
 ## Description of your Game
