@@ -13,37 +13,51 @@ func main() {
 
 	// get guess limit input as string
 	var inputGuessLimit string
-	fmt.Print("\nPlease enter a number as guess limit: ")
+	fmt.Print("\n> Please enter a number as guess limit: ")
 	fmt.Scanln(&inputGuessLimit)
 
 	// validate guess limit whether it is int
 	parsedGuessLimit, err := strconv.Atoi(inputGuessLimit)
 	for err != nil {
-		fmt.Print("]n> Invalid input\n")
+		fmt.Print("\n ! Invalid input\n")
 
 		// keep asking for correct input
-		fmt.Print("Please only enter a number guess limit: ")
+		fmt.Print("\n> Please only enter a number guess limit: ")
 		fmt.Scanln(&inputGuessLimit)
 		parsedGuessLimit, err = strconv.Atoi(inputGuessLimit)
 	}
 
 	// generate random number
-	randNum := randGen.Intn(parsedGuessLimit) + 1
+	randNumToGuess := randGen.Intn(parsedGuessLimit) + 1
 
 	// get user guess input as string
 	var inputGuessNumber string
-	fmt.Printf("Please enter your guess between 1 to %d: ", parsedGuessLimit)
+	fmt.Printf("\n> Please enter your guess between 1 to %d: ", parsedGuessLimit)
 	fmt.Scanln(&inputGuessNumber)
 
 	// validate user guess input whether it is int
 	parsedGuessNumber, err := strconv.Atoi(inputGuessNumber)
-	if err != nil {
-		fmt.Printf("Invalid input %s", err)
-		return // TODO - temporarily
+	for err != nil {
+		fmt.Print("\n ! Invalid input\n")
+
+		fmt.Printf("\n> Please only enter your guess between 1 to %d: ", parsedGuessLimit)
+		fmt.Scanln(&inputGuessNumber)
+		parsedGuessNumber, err = strconv.Atoi(inputGuessNumber)
 	}
 
-	fmt.Printf("Your Guess: %d\n-Limit: %d\n- Random number to guess %d\n", parsedGuessNumber, parsedGuessLimit, randNum)
-
+	//var isGuessedCorrect bool = false
+	//for !isGuessedCorrect {
+	if parsedGuessNumber > randNumToGuess {
+		fmt.Print("\n :Try lower ⬇️: ")
+	}
+	if parsedGuessNumber < randNumToGuess {
+		fmt.Print("\n :Try higher ⬆️: ")
+	}
+	if parsedGuessNumber == randNumToGuess {
+		fmt.Print("\n :You got it 🎉")
+		//isGuessedCorrect = true
+	}
+	//}
 }
 
 // Game Logic (simplified)
