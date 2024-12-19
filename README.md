@@ -16,7 +16,7 @@ It's simple!
 
    ### A (YouTube) video showing the game running and explaining how it goes.
 
-## Data types (How you applied some concepts from the book in your code, you can reference/use the comments you wrote in your code)
+## Data types (some concepts applied)
 * string: TBA
 
 * bool: TBA
@@ -28,12 +28,12 @@ It's simple!
   
 * Solutions: TBA
   
-## The Good, the Bad and the Ugly (What you loved about this experience, what has bad, and what did you disliked)
+## The Good, the Bad and the Ugly (What was loved about this experience, what was bad, and what did was disliked)
 * Good: TBA
 * Bad: TBA
 * Ugly: TBA
   
-## Learning Experience (briefly explain what you learn in this assignment)
+## Learning Experience (brief explaination about lessons learned)
 * Lessons: TBA
 
 
