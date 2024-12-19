@@ -13,14 +13,17 @@ func main() {
 
 	// get guess limit input as string
 	var inputGuessLimit string
-	fmt.Print("Enter a number as guess limit: ")
+	fmt.Print("\nPlease enter a number as guess limit: ")
 	fmt.Scanln(&inputGuessLimit)
 
 	// validate guess limit whether it is int
 	parsedGuessLimit, err := strconv.Atoi(inputGuessLimit)
-	if err != nil {
-		fmt.Print("Invalid input")
-		return // TODO - temporary
+	for err != nil {
+		fmt.Print("]n> Invalid input\n")
+		// keep asking for correct input
+		fmt.Print("Please only enter a number guess limit: ")
+		fmt.Scanln(&inputGuessLimit)
+		parsedGuessLimit, err = strconv.Atoi(inputGuessLimit)
 	}
 
 	// generate random number
@@ -28,7 +31,7 @@ func main() {
 
 	// get user guess input as string
 	var inputGuessNumber string
-	fmt.Print("Your guess: ")
+	fmt.Printf("Please enter your guess between 1 to %d: ", parsedGuessLimit)
 	fmt.Scanln(&inputGuessNumber)
 
 	// validate user guess input whether it is int
@@ -38,7 +41,7 @@ func main() {
 		return // TODO - temporarily
 	}
 
-	fmt.Printf("Your input: %d - Limit: %d - Random number %d\n", parsedGuessNumber, parsedGuessLimit, randNum)
+	fmt.Printf("Your Guess: %d\n-Limit: %d\n- Random number to guess %d\n", parsedGuessNumber, parsedGuessLimit, randNum)
 
 }
 
@@ -50,3 +53,7 @@ func main() {
 // if too high - say to guess lower
 // if too low - say to guess higher
 // if guessed number == randomly generated number - congratulate and finish game
+
+// Git command
+// add all changes and commit => git commit -am "Your commit message"
+// puss changes to github => git push
