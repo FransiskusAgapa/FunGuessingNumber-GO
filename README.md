@@ -14,17 +14,14 @@ It's simple!
 
 ## How to play (screenshots of the gameplay)
 
-
    ### A (YouTube) video showing the game running and explaining how it goes.
 
 ## Data types (How you applied some concepts from the book in your code, you can reference/use the comments you wrote in your code)
-* string: for storing player names (name: String), making it easy to handle text inputs.
+* string: TBA
 
-* bool: for the is_folded field in the Player struct, which indicates whether a player has folded their hand or not.
+* bool: TBA
 
-* list: Vec (vector) is used throughout the code as a dynamic list to hold multiple items. For example, Vec<Card> is used to store the player's hand, community cards, and deck of cards.
-
-* type equivalence: Action and Option<Action> are examples of type equivalence in Rust. Both represent actions a player can take, but Option<Action> is used to store whether the player has taken an action or not (i.e., it’s None when no action is taken and Some(Action) when a player has chosen an action).
+* type equivalence: TBA
 
 ## Difficulties and Solutions (challenges found & how it was overcome)
 * Difficulties: TBA
