@@ -5,7 +5,7 @@ The purpose of this assignment are:
 2. Practice creativity
 3. Apply the concepts of  Data Types
 
-## Description of your Game
+## Description of Guessing Number Game
 Let's see how luck you are guessing a random number! Set the range of number for your to guess a (guaranteed) random number. 
 
 ## How to run
