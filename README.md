@@ -1,4 +1,4 @@
-# A Game in Rust - Guess Number
+# A Game in GO - Guess Number
 
 The purpose of this assignment are:
 1. Learn yet another programming language
