@@ -20,6 +20,7 @@ func main() {
 	parsedGuessLimit, err := strconv.Atoi(inputGuessLimit)
 	for err != nil {
 		fmt.Print("]n> Invalid input\n")
+
 		// keep asking for correct input
 		fmt.Print("Please only enter a number guess limit: ")
 		fmt.Scanln(&inputGuessLimit)
@@ -55,5 +56,11 @@ func main() {
 // if guessed number == randomly generated number - congratulate and finish game
 
 // Git command
-// add all changes and commit => git commit -am "Your commit message"
-// puss changes to github => git push
+// # 1. Stage all changes
+// git add .
+
+// # 2. Commit the changes with a message
+// git commit -m "Fixed bug in the login form"
+
+// # 3. Push to the remote repository (to the 'main' branch)
+// git push origin main
