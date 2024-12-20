@@ -3,16 +3,21 @@ package main
 import (
 	"fmt"       // allow to print, read user input
 	"math/rand" // random number generator (RNG)
-	"strconv"
-	"time" // allow 'time'
+	"strconv"   // string to int
+	"time"      // allow 'time'
 )
 
 func main() {
 	// new random number generator  - ensures that the random number sequence is different each time the program runs (RNG is independent of the global rand package.)
 	randGen := rand.New(rand.NewSource(time.Now().UnixNano()))
+
+	// prompt and validate user guess limit
 	var numberToGuess int = promptGuessLimit(randGen)
+
+	// prompt and validate user guess
 	var userGuess int = promptUserGuess(numberToGuess)
-	//fmt.Printf("\n-ToGuess: %d\n-YourInput: %d", numberToGuess, userGuess)
+
+	// check user guess against number to guess
 	isGuessed(numberToGuess, userGuess)
 }
 
