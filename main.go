@@ -7,6 +7,10 @@ import (
 	"time"      // allow 'time'
 )
 
+// TODO:
+// # 1. update func 'promptUserGuess' - make sure no input above 'guessLimit' would be allowed
+// # 2. update func 'isGuessed' - make sure user can keep entering answer until they get it correct
+
 func main() {
 	// new random number generator  - ensures that the random number sequence is different each time the program runs (RNG is independent of the global rand package.)
 	randGen := rand.New(rand.NewSource(time.Now().UnixNano()))
