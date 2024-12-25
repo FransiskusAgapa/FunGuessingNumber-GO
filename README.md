@@ -1,4 +1,4 @@
-# A Game in GO - Guess Number
+# A Number Guessing Game in GO 
 
 The purpose of this assignment are:
 1. Learn yet another programming language
