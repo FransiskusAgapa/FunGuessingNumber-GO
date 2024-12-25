@@ -105,7 +105,7 @@ func isGuessed(toGuess int, uNum int) bool {
 // git add .
 
 // # 4. Commit the changes with a message
-// git commit -m "Fixed bug in the login form"
+// git commit -m "your msg here"
 
 // # 5. Push to the remote repository (to the 'main' branch)
 // git push origin main
