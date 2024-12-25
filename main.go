@@ -50,7 +50,6 @@ func promptGuessLimit(rng *rand.Rand) int {
 func promptUserGuess(guessLimit int, inputGuessNumber string) int {
 	//fmt.Printf("\n[ check limit coming into promptUserGuess %d ]\n", guessLimit)
 	//get user guess input as string
-	//var inputGuessNumber string
 	fmt.Printf("\n> Please enter your guess between 1 to %d: ", guessLimit)
 	fmt.Scanln(&inputGuessNumber)
 	// validate user guess input whether it is int
