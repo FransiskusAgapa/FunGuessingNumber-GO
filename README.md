@@ -14,7 +14,7 @@ It's simple!
 
 ## How to play (screenshots of the gameplay)
 
-   ### A (YouTube) video showing the game running and explaining how it goes.
+   ### A (YouTube) video showing the game running and explaining how it goes (optional).
 
 ## Data types
 `int`: var numberToGuess int and var userGuess int are both integers, representing the random number to guess and the user's guess.
@@ -54,14 +54,14 @@ Type Conversion:
 Random Number Generation:  
 The rand package is used to generate random numbers. The `rand.NewSource(time.Now().UnixNano())` is used to create a new source of randomness based on the current time, to make different random numbers each time the program runs.
 
-## Difficulties and Solutions (challenges found & how it was overcome)
+## Difficulties and Solutions
 * Difficulties:   
 Figure out the data type to be used & how user input will be taken and compared
   
 * Solutions:  
 Make a step-by-step outline of how the game plays out
   
-## The Good, the Bad and the Ugly (What was loved about this experience, what was bad, and what did was disliked)
+## The Good, the Bad and the Ugly
 * Good: 
 ** It's a fun and intuitive game, using emoji to react to user guess is FUN
 
