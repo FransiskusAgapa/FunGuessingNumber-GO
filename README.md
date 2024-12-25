@@ -17,7 +17,7 @@ It's simple!
    ### A (YouTube) video showing the game running and explaining how it goes.
 
 ## Data types & Concepts
-Data Types:
+Data Types:  
 `int`: var numberToGuess int and var userGuess int are both integers, representing the random number to guess and the user's guess.
 
 `string`: var `inputGuessLimit` string and var `inputGuessNumber` string store user inputs as strings before converting them to integers.
