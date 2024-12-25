@@ -19,7 +19,7 @@ func main() {
 	var numberToGuess int = promptGuessLimit(randGen)
 
 	// prompt and validate user guess
-	var userGuess int = promptUserGuess(numberToGuess)
+	var userGuess int = promptUserGuess(numberToGuess, "0")
 
 	// check user guess against number to guess
 	isGuessed(numberToGuess, userGuess)
@@ -43,16 +43,14 @@ func promptGuessLimit(rng *rand.Rand) int {
 	randNumToGuess = rng.Intn(parsedGuessLimit) + 1
 
 	//fmt.Printf("\n[ check guess limit Before leaving promptGuessLimit: %d ]\n", randNumToGuess)
-
 	return randNumToGuess
 }
 
 // func to prompt and validate user guess
-func promptUserGuess(guessLimit int) int {
+func promptUserGuess(guessLimit int, inputGuessNumber string) int {
 	//fmt.Printf("\n[ check limit coming into promptUserGuess %d ]\n", guessLimit)
-
 	//get user guess input as string
-	var inputGuessNumber string
+	//var inputGuessNumber string
 	fmt.Printf("\n> Please enter your guess between 1 to %d: ", guessLimit)
 	fmt.Scanln(&inputGuessNumber)
 	// validate user guess input whether it is int
@@ -60,7 +58,7 @@ func promptUserGuess(guessLimit int) int {
 
 	for err != nil {
 		fmt.Print("\n ! Invalid input \n")
-		fmt.Printf("\n> Please only enter your guess between 1 to %d: ", guessLimit)
+		fmt.Printf("\n> Please only enter a number between 1 to %d: ", guessLimit)
 		fmt.Scanln(&inputGuessNumber)
 		parsedGuessNumber, err = strconv.Atoi(inputGuessNumber)
 	}
@@ -68,18 +66,17 @@ func promptUserGuess(guessLimit int) int {
 }
 
 // func to check number to guess and user guess
-func isGuessed(toGuess int, uNum int) bool {
-	if uNum > toGuess {
-		fmt.Print("\n :Try lower ⬇️\n")
+func isGuessed(toGuess int, uNum int) {
+	for toGuess != uNum { // equivalent of 'while' loop
+		if uNum > toGuess {
+			fmt.Print("\n :Try lower ⬇️\n")
+		}
+		if uNum < toGuess {
+			fmt.Print("\n :Try higher ⬆️\n")
+		}
+		uNum = promptUserGuess(toGuess, strconv.Itoa(uNum)) // strconv.Itoa(intHere) - change int to str
 	}
-	if uNum < toGuess {
-		fmt.Print("\n :Try higher ⬆️\n")
-	}
-	if uNum == toGuess {
-		fmt.Print("\n :You got it 🎉\n")
-		return true
-	}
-	return false
+	fmt.Print("\n : You got it 🎉\n\n")
 }
 
 // Game Logic (simplified)
