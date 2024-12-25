@@ -70,7 +70,6 @@ Make a step-by-step outline of how the game plays out
 * Ugly: -
   
 ## Learning Experience
-* Lessons: 
 - Learned how different types are instantiated in GO.  
 - Learned how error is useful to validate the state of a value.  
 - Learned how to use cool conversion int to string, vice versa.  
