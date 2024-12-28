@@ -4,19 +4,34 @@ import (
 	"fmt"       // allow to print, read user input
 	"math/rand" // random number generator (RNG)
 	"strconv"   // string to int
-	"time"      // allow 'time'
+	// allow 'time'
 )
 
 // TODO:
-// # 1. update func 'promptUserGuess' - make sure no input above 'guessLimit' would be allowed
-// # 2. update func 'isGuessed' - make sure user can keep entering answer until they get it correct
+// # UX
+// # 1. Provide hint: how 'close' their guess to the actual number
+// # 2. Provide Guess History: a way to keep track of previous guess & display it
+// # 3. Set timer/timeout: countdown/limit the number of guess
+// # Interactive Feedback
+// # 4. Progressive Feedback: Instead of just saying "Try lower" or "Try higher," include more engaging responses, like "You're getting warmer!" or "You're freezing cold!"
+// # 5. Sound Effects: Use sound effects to provide feedback on user actions, such as a "ding" when they guess correctly or a "buzz" for incorrect guesses.
+// # Personalization
+// # 6. Set player's name
+// # 7. Leaderboard: Implement a scoring system where players earn points based on how quickly they guess the number, and display a leaderboard of top scores.
+// # Error Handling and Input Validation
+// # 8. Provide friendly error messages for invalid inputs.
+// # 9. Retry Option: After the game ends, give the player the option to play again without restarting the entire program.
+// # Story / Theme
+// # 10. Themed Game: Add a narrative or theme to the game, such as guessing a number to unlock a treasure chest or as part of a larger adventure. This can increase engagement by giving the game context and meaning.
+// # 11. Progressive Challenges: Introduce new challenges or mini-games as the user progresses through levels or wins multiple rounds, such as more difficult numbers to guess or added obstacles.
+// # Multiplayer option
+// # 12. Competitive Mode: Allow multiple players to take turns guessing the number and see who can guess it in the fewest attempts.
+// # 13. Tracking Statistic
+// # 14. Guessing Stats: Track statistics such as the average number of guesses per game, the longest streak of correct guesses, and the time taken to guess the number. Display these stats at the end of the game to encourage improvement.
 
 func main() {
-	// new random number generator  - ensures that the random number sequence is different each time the program runs (RNG is independent of the global rand package.)
-	randGen := rand.New(rand.NewSource(time.Now().UnixNano()))
-
 	// prompt and validate user guess limit
-	var numberToGuess int = promptGuessLimit(randGen)
+	var numberToGuess int = promptGuessLimit()
 
 	// prompt and validate user guess
 	var userGuess int = promptUserGuess(numberToGuess, "0")
@@ -26,24 +41,8 @@ func main() {
 }
 
 // func to prompt and validate user guess limit
-func promptGuessLimit(rng *rand.Rand) int {
-	var randNumToGuess int
-	var inputGuessLimit string
-	fmt.Print("\n> Please enter a number as guess limit: ")
-	fmt.Scanln(&inputGuessLimit)
-	parsedGuessLimit, err := strconv.Atoi(inputGuessLimit)
-
-	// keep asking for correct input (an int)
-	for err != nil {
-		fmt.Print("\n ! Invalid input\n")
-		fmt.Print("\n> Please only enter a number as guess limit: ")
-		fmt.Scanln(&inputGuessLimit)
-		parsedGuessLimit, err = strconv.Atoi(inputGuessLimit)
-	}
-	randNumToGuess = rng.Intn(parsedGuessLimit) + 1
-
-	//fmt.Printf("\n[ check guess limit Before leaving promptGuessLimit: %d ]\n", randNumToGuess)
-	return randNumToGuess
+func promptGuessLimit() int {
+	return rand.Intn(100) + 1 // random number between 1 to 100
 }
 
 // func to prompt and validate user guess
