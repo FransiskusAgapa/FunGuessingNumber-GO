@@ -1,0 +1,8 @@
+; TODO
+; - restart option: ask if the player wants to play again
+; - set limited number of attempts
+; - set difficulty level (easy: 1-50,medium: 1-100, hard: 1-500)
+; - track previous guess to help player from input the same number
+; - set best score for how fast the number is guessed
+; - multiplayer mode: two players take turns guessing the same number or try to guess each other's number.
+; - feedback on how close the guess is ("you're getting warmer","you're very close")
